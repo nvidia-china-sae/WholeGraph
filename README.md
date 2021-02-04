@@ -6,7 +6,7 @@
 
 ## Environment Setup
 
-- Download this source codes:
+- Download the source codes:
 ```
 git clone https://gitlab-master.nvidia.com/xiaonans/wholegraph_github.git
 ```
@@ -34,5 +34,6 @@ sh run.sh
 | Test Accuracy | Valid Accuracy | Parameters | Hardware
 | ------ | ------ | ------ | ------ |
 | 0.6693 ± 0.0010 | 0.7111 ± 0.0002 | 713,754 | 7*A100(40GB) |
+ 
 
 
