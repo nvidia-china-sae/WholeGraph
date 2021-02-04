@@ -1,23 +1,14 @@
-## PREREQUISITES
+## Prerequisites
 
-- **Hardware**: [DGX Station™ A100](https://www.nvidia.com/en-us/data-center/dgx-station-a100/)
-- **Docker**: Docker CE v19.03+ and [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#quickstart)
-- **NVIDIA Drivers**: 450.80+
+- **Hardware:** [DGX Station™ A100](https://www.nvidia.com/en-us/data-center/dgx-station-a100/)
+- **Docker:** Docker CE v19.03+ and [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#quickstart)
+- **NVIDIA Drivers:** 450.80+
 
 ## Environment Setup
+Build docker from Dockerfile.pytorch:
+`sh docker.sh`
 
-If using TensorFlow version, build docker from Dockerfile.tensorflow, or use [this docker image](nvcr.io/nvidian/sae/ydx_whole_graph:v0.3).
 
-If using PyTorch version, build docker from Dockerfile.pytorch, or use [this docker image](nvcr.io/nvidian/sae/ydx_whole_graph_pytorch:v0.3).
-
-## Build
-
-```
-mkdir build
-cd build
-cmake ../
-make -j
-```
 
 ## Run
 
