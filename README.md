@@ -5,8 +5,16 @@
 - **NVIDIA Drivers:** 450.80+
 
 ## Environment Setup
+
+- Download this source codes:
+```
+git clone https://gitlab-master.nvidia.com/xiaonans/wholegraph_github.git
+cd wholegraph_github
+```
 Build docker from Dockerfile.pytorch:
-`sh docker.sh`
+```
+sh docker.sh
+```
 
 
 
