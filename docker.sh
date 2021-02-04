@@ -5,5 +5,6 @@ docker run --gpus all -it --rm --privileged=true \
            -v $HERE:$HERE \
     	   -v /raid/privatedata/pursuit/dongxuy/dataset/gnn/dataset:$HERE/dataset \
            -w $HERE \
+	   -u $(id -u):$(id -g) \
            wholegraph.pytorch
 
