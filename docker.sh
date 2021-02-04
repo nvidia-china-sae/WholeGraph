@@ -1,11 +1,9 @@
-#docker pull nvcr.io/nvidian/sae/ydx_whole_graph_pytorch:v0.3
-#docker build -t wholegraph.pytorch -f Dockerfile.pytorch .
+docker build -t wholegraph.pytorch -f Dockerfile.pytorch .
 HERE=`pwd`
-docker run --gpus all -it --rm \
+docker run --gpus all -it --rm --privileged=true \
            --ipc=host \
            -v $HERE:$HERE \
-    	   -v /home/xiaonans/projects/gnn/wholegraph/dataset:/home/xiaonans/projects/gnn/wholegraph_git/dataset \
+    	   -v /raid/privatedata/pursuit/dongxuy/dataset/gnn/dataset:$HERE/dataset \
            -w $HERE \
-	       -u $(id -u):$(id -g) \
            wholegraph.pytorch
 
