@@ -11,7 +11,7 @@
 git clone https://gitlab-master.nvidia.com/xiaonans/wholegraph_github.git
 ```
 
-- Build docker from Dockerfile.pytorch:
+- Build docker from Dockerfile.pytorch and run the container:
 ```
 cd wholegraph_github
 sh docker.sh
