@@ -1,7 +1,8 @@
-# PREREQUISITES
-## Hardware: [DGX Station™ A100](https://www.nvidia.com/en-us/data-center/dgx-station-a100/)
-## Docker: Docker CE v19.03+ and [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#quickstart)
-## NVIDIA Drivers: 450.80+
+## PREREQUISITES
+
+- Hardware: [DGX Station™ A100](https://www.nvidia.com/en-us/data-center/dgx-station-a100/)
+- Docker: Docker CE v19.03+ and [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#quickstart)
+- NVIDIA Drivers: 450.80+
 
 ## Environment Setup
 
