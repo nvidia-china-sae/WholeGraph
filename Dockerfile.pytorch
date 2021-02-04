@@ -1,0 +1,13 @@
+FROM nvcr.io/nvidia/pytorch:20.10-py3
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install -qy software-properties-common python3-dev
+RUN apt purge -y --auto-remove cmake \
+ && wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null \
+ && apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main' && apt update && apt install -y cmake
+RUN HOROVOD_WITH_PYTORCH=1 HOROVOD_GPU_OPERATIONS=NCCL HOROVOD_NCCL_LINK=SHARED pip3 install horovod==0.20.3
+RUN pip3 install ogb==1.2.3 pyyaml
+RUN apt-get update && apt install -y libyaml-cpp-dev
+RUN apt-get update && apt install -y libgflags-dev
+
+RUN FORCE_CUDA=1 pip3 install torch-scatter torch-sparse
+RUN pip3 install -v torch-geometric
+
