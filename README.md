@@ -1,3 +1,7 @@
+## Dependencies
+Make sure you have installed the[ NVIDIA driver](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver) and Docker engine for your Linux distribution Note that you do not need to install the CUDA Toolkit on the host system, but the NVIDIA driver needs to be installed.
+For instructions on getting started with the NVIDIA Container Toolkit, refer to [the installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
+
 ## Environment Setup
 
 If using TensorFlow version, build docker from Dockerfile.tensorflow, or use [this docker image](nvcr.io/nvidian/sae/ydx_whole_graph:v0.3).
