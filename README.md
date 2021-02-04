@@ -31,7 +31,6 @@ sh run.sh
 ```
 
 ## Our results:
-total params: 713,754
 | Test Accuracy | Valid Accuracy | Parameters | Hardware
 | ------ | ------ | ------ | ------ |
 | 0.6693 ± 0.0010 | 0.7111 ± 0.0002 | 713,754 | 7*A100(40GB) |
