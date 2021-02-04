@@ -29,6 +29,7 @@ Make sure you are under the _build_ dir.
 ```
 sh run.sh
 ```
+Running summaries can be got at result/papers100m.
 
 ## Our results:
 | Test Accuracy | Valid Accuracy | Parameters | Hardware
