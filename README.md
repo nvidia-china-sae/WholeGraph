@@ -17,22 +17,15 @@ cd wholegraph_github
 sh docker.sh
 ```
 
-
+- Download the ogbn-papers100M dataset and convert it to binary format:
+```
+mkdir dataset
+cd build
+python3 ../examples/tools/ogb_data_convert.py -d ogbn-papers100M -r ../dataset
+```
 
 ## Run
-
-To run the sample without install, from the build directory:
-
-First convert OGB data to binary format.
+Make sure you are under the _build_ dir.
 ```
-python3 ../examples/tools/ogb_data_convert.py -d [DATASET] -r [ROOTDIR]
-```
-
-TensorFlow version:
-```
-PYTHONPATH=.. horovodrun --disable-cache  -np 4 -H localhost:4 python3 ../examples/tensorflow/simple_test.py -g [CONVERTED_DIR]
-```
-PyTorch version:
-```
-PYTHONPATH=.. horovodrun --disable-cache  -np 4 -H localhost:4 python3 ../examples/torch/simple_test.py -g [CONVERTED_DIR]
+sh run.sh
 ```
