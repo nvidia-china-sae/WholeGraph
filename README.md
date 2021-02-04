@@ -9,10 +9,11 @@
 - Download this source codes:
 ```
 git clone https://gitlab-master.nvidia.com/xiaonans/wholegraph_github.git
+```
+
+- Build docker from Dockerfile.pytorch:
+```
 cd wholegraph_github
-```
-Build docker from Dockerfile.pytorch:
-```
 sh docker.sh
 ```
 
