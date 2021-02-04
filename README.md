@@ -1,32 +1,39 @@
+## Prerequisites
+
+- **Hardware:** [DGX Station™ A100](https://www.nvidia.com/en-us/data-center/dgx-station-a100/)
+- **Docker:** Docker CE v19.03+ and [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#quickstart)
+- **NVIDIA Drivers:** 450.80+
+
 ## Environment Setup
 
-If using TensorFlow version, build docker from Dockerfile.tensorflow, or use [this docker image](nvcr.io/nvidian/sae/ydx_whole_graph:v0.3).
-
-If using PyTorch version, build docker from Dockerfile.pytorch, or use [this docker image](nvcr.io/nvidian/sae/ydx_whole_graph_pytorch:v0.3).
-
-## Build
-
+- Download the source codes:
 ```
-mkdir build
+git clone https://gitlab-master.nvidia.com/xiaonans/wholegraph_github.git
+```
+
+- Build docker from Dockerfile.pytorch and run the container:
+```
+cd wholegraph_github
+sh docker.sh
+```
+
+- Download the ogbn-papers100M dataset and convert it to binary format:
+```
+mkdir dataset
 cd build
-cmake ../
-make -j
+python3 ../examples/tools/ogb_data_convert.py -d ogbn-papers100M -r ../dataset
 ```
 
 ## Run
-
-To run the sample without install, from the build directory:
-
-First convert OGB data to binary format.
+Make sure you are under the _build_ dir.
 ```
-python3 ../examples/tools/ogb_data_convert.py -d [DATASET] -r [ROOTDIR]
+sh run.sh
 ```
 
-TensorFlow version:
-```
-PYTHONPATH=.. horovodrun --disable-cache  -np 4 -H localhost:4 python3 ../examples/tensorflow/simple_test.py -g [CONVERTED_DIR]
-```
-PyTorch version:
-```
-PYTHONPATH=.. horovodrun --disable-cache  -np 4 -H localhost:4 python3 ../examples/torch/simple_test.py -g [CONVERTED_DIR]
-```
+## Our results:
+| Test Accuracy | Valid Accuracy | Parameters | Hardware
+| ------ | ------ | ------ | ------ |
+| 0.6693 ± 0.0010 | 0.7111 ± 0.0002 | 713,754 | 7*A100(40GB) |
+ 
+
+
