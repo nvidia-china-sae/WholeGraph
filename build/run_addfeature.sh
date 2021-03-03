@@ -23,8 +23,8 @@
 
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 PYTHONPATH=.. horovodrun --disable-cache -np 16 -H localhost:16 --mpi-args="--oversubscribe" \
 	    python3 ../examples/torch/papers100m_addfeature.py \
-        -g ../dataset/ogbn_papers100M/converted  -u -b 512 -w 0 -e 200 --uselabel -r 1 --weightdecay 1e-5 \
-        -t 100 -l 3 -p 10 -n '16,16,16' -s '16,16,16' --optimizer 'adam' --lr 0.001 --neighbordropout 0.3 \
+        -g ../dataset/ogbn_papers100M/converted  -u -b 512 -w 0 -e 200 --uselabel -r 10 --weightdecay 1e-5 \
+        -t 100 -l 3 -p 10 -n '16,16,16' -s '16,16,16' --optimizer 'adam' --lr 0.001 --neighbordropout 0.1 \
         -d 0.3 --hiddensize 256 --embeddingdropout 0.1 --heads 8 -o 'paper' \
         --usedeg
 
