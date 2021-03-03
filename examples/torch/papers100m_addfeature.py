@@ -215,7 +215,7 @@ class HomoGNNModel(torch.nn.Module):
         self.fc = torch.nn.Linear(hidden_feat_dim*options.heads, class_count)
         if use_label:
             in_feat_dim = in_feat_dim + class_count    
-        if options.norm_adj:
+        if options.use_deg:
             in_feat_dim = in_feat_dim + 3        
 
         for i in range(num_layer):
